@@ -5,6 +5,8 @@ import { RenderPixelatedPass } from 'three/examples/jsm/postprocessing/RenderPix
 import modelLoader from './src/GLTFLoader'
 import { Pathfinding } from 'three-pathfinding';
 
+async function init(){
+
 const width = window.innerWidth
 const height = window.innerHeight
 const aspect = width / height
@@ -188,3 +190,6 @@ function animate() {
 
 animate()
 
+}
+
+init()
