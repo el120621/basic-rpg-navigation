@@ -1,9 +1,13 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPixelatedPass } from 'three/examples/jsm/postprocessing/RenderPixelatedPass.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
+import { RenderPixelatedPass } from 'three/examples/jsm/postprocessing/RenderPixelatedPass.js'
 import modelLoader from './src/GLTFLoader'
-import { Pathfinding } from 'three-pathfinding';
+import { Pathfinding } from 'three-pathfinding'
+import navmesh_glb from './src/models/navmesh.glb'
+import ybot_glb from './src/models/ybot.glb'
+import tpose_glb from './src/models/tpose.glb'
+
 
 async function init(){
 
@@ -24,9 +28,9 @@ renderPixelatedPass.depthEdgeStrength = 0;
 renderPixelatedPass.normalEdgeStrength = 0;
 composer.addPass( renderPixelatedPass );    
 
-const navmesh = await modelLoader('./src/models/navmesh.glb')
-const ybotModel = await modelLoader('./src/models/ybot.glb')
-const npcModel = await modelLoader('./src/models/tpose.glb')
+const navmesh = await modelLoader(navmesh_glb)
+const ybotModel = await modelLoader(ybot_glb)
+const npcModel = await modelLoader(tpose_glb)
 const ybot = ybotModel.scene
 console.log(ybot)
 
